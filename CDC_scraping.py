@@ -13,7 +13,7 @@ def get_cdc_places():
     params = {
         "$where": f"({measure_filter}) AND countyfips IS NOT NULL",
         "$select": "countyname, countyfips, stateabbr, measureid, data_value",
-        "$limit": 600000  #change later for more data --> 1000 for testing --> 60 0000 gets all US counties
+        "$limit": 600000  #change later for more data --> 1000 for testing --> 600000 gets all US counties
     }
 
     response = requests.get(url, params = params)

@@ -13,7 +13,7 @@ def get_census_data():
         "B27001_005E": "uninsured_count",
         "B02001_003E": "black_pop",
         "B02001_002E": "white_pop",
-        "B01003_001E": "total_pop",
+        "B01003_001E": "total_pop",  #can add more later for more features
     }
 
     var_string = ",".join(variables.keys())
