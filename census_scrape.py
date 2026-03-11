@@ -6,6 +6,9 @@ CENSUS_API_KEY = "daede620bf11f9e7e9f820296d6e9315db2250b3"  #don't kill my key 
 def get_census_data():
     #county level, 5 year est
     variables = {
+        "B17001_002E": "poverty_count",      # people below poverty line
+        "B23025_005E": "unemployed_count",   # unemployed people
+        "B23025_002E": "labor_force_count", # added these 3 very late didn't really mess with them yet
         "B19013_001E": "median_household_income",
         "B15003_022E": "bachelors_degree_count",
         "B01002_001E": "median_age",
@@ -42,6 +45,8 @@ def get_census_data():
     df["pct_uninsured"] = df["uninsured_count"] / df["total_pop"] * 100  #convert to features
     df["pct_bachelors"] = df["bachelors_degree_count"] / df["total_pop"] * 100
     df["pct_black"] = df["black_pop"] / df["total_pop"] * 100
+    df["pct_poverty"] = df["poverty_count"] / df["total_pop"] * 100
+    df["pct_unemployed"] = df["unemployed_count"] / df["labor_force_count"] * 100
 
     return df
 

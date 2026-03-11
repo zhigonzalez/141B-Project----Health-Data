@@ -4,7 +4,7 @@ import requests
 def get_cdc_places():
     url = "https://data.cdc.gov/resource/cwsq-ngmh.json" #no key -- free
 
-    measures = ["DIABETES", "CHD", "OBESITY", "CSMOKING", "BINGE", "LPA", "SLEEP"] #add more/less later
+    measures = ["DIABETES", "CHD", "OBESITY", "CSMOKING", "BINGE", "LPA", "SLEEP", "MHLTH", "ACCESS2"] #add more/less later
     #risk_factors = ["OBESITY", "CSMOKING", "BINGE", "LPA", "SLEEP"]
     #all_measures = measures + risk_factors
 
